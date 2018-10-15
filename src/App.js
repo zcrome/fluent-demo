@@ -7,6 +7,9 @@ import * as PropTypes from 'prop-types';
 import PasswordBox from "react-uwp/PasswordBox";
 import AutoSuggestBox from "react-uwp/AutoSuggestBox";
 
+import { FadeInOut, SlideInOut, ScaleInOut, CustomAnimate } from "react-uwp/Animate";
+
+
 const baseStyle: React.CSSProperties = {
   margin: "10px 10px 10px 0"
 };
@@ -38,15 +41,29 @@ class LoginComponent extends Component {
 
   static contextTypes = { theme: PropTypes.object };
 
+  handleClick(){
+    console.log("HALO!");
+  }
+
+
   render() {
+
+    const baseStyle: React.CSSProperties = {
+      margin: 10
+    };
+
+    const defaultBtnStyle: React.CSSProperties = {
+      margin: 4
+    };
+
     const { theme } = this.context;
     const itemStyle = theme.prefixStyle({
       color: theme.baseHigh,
       fontSize: 14,
       fontWeight: "lighter",
       textAlign: "center",
-      width: "30%",
-      height: "30%",
+      width: "40%",
+      height: "40%",
       margin: 10,
       outline: "none",
       border: `1px solid ${theme.listAccentLow}`,
@@ -74,7 +91,7 @@ class LoginComponent extends Component {
         <span style={{ ...itemStyle, background: theme.acrylicTexture40.background }}>
         <p
         style={theme.prefixStyle({
-          "fontSize": "6em",
+          "fontSize": "18em",
           "position": "relative",
           "top": "50%",
           "left": "50%",
@@ -82,15 +99,24 @@ class LoginComponent extends Component {
         })}>14:40</p>
         <p
         style={theme.prefixStyle({
-          "fontSize": "20px",
+          "fontSize": "3em",
           "float": "left",
           "marginTop": "19%",
-          "left": "16%",
+          "left": "36%",
           "display": "block",
           "position": "relative"
         })}>23 de septiembre del 2018</p>
+
+        <Button onClick={this.handleClick} style={{ fontSize: 32, ...defaultBtnStyle,"marginTop": "26%",
+          "left": "32%",
+          "display": "block",
+          "position": "relative",
+          "width": "40%",
+          "height": "12%","fontSize": "4em"  }}>
+          Iniciar Sesion
+        </Button>
+
         </span>
-        
       </div>
     );
   }
