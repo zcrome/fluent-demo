@@ -30,3 +30,31 @@
     transform: rotate(360deg);
   }
 }
+
+.bottomNavContainer{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.topNavContainer{
+  height: 160px;
+  vertical-align: top;
+}
+
+.divisions{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 50%;
+}
+
+.topNavTitle{
+  font-size: 4em;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
