@@ -9,6 +9,7 @@ import AutoSuggestBox from "react-uwp/AutoSuggestBox";
 
 import NavigationView from "react-uwp/NavigationView";
 import SplitViewCommand from "react-uwp/SplitViewCommand";
+import Icon from "react-uwp/Icon";
 // import Content from "./components/Content";
 
 import { FadeInOut, SlideInOut, ScaleInOut, CustomAnimate } from "react-uwp/Animate";
@@ -230,9 +231,9 @@ class ProjectsView extends Component {
   render() {
 
     const navigationTopNodes = [
-      <SplitViewCommand label="Mis Casos" icon={"\uED43"} />,
-      <SplitViewCommand label="Compartidos" icon={"\uE72D"} />,
-      <SplitViewCommand label="Papelera" icon={"\uE74D"} />
+      <SplitViewCommand className="leftMenuItemsTitles" label="Mis Casos" icon={"\uED43"} />,
+      <SplitViewCommand className="leftMenuItemsTitles" label="Compartidos" icon={"\uE72D"} />,
+      <SplitViewCommand className="leftMenuItemsTitles" label="Papelera" icon={"\uE74D"} />
     ];
 
     const navigationBottomNode = [
@@ -295,6 +296,7 @@ class ProjectsView extends Component {
               ...baseStyle,
               margin: "0px"
             }}
+            topIcon={<Icon style={{ fontSize: "4em" }}>ToggleThumb</Icon>}
             pageTitle="Jose Sanchez"
             displayMode="compact"
             autoResize={false}
@@ -307,23 +309,56 @@ class ProjectsView extends Component {
               "display": "block",
               "position": "relative",
               "width": "100%",
-              "height": "100%"
+              "height": "100px"
             }}>
               <div className="topNavContainer">
 
-                <div className="divisions">
+                <div className="divisions-parent-left">
                   <p className="topNavTitle">Mis Casos</p>
                 </div>
-                <div className="divisions"></div>
 
+                <div className="divisions-parent-right">
+
+                  <div className="divisions-left-cont">
+                    <Button className="topSortButton" icon={"\uE8CB"}></Button>
+                    <div className="topSortMargin"></div>
+                    <Button className="topSortButton" icon={"\uE8CB"}></Button>
+                  </div>
+
+                  <div className="divisions-right-cont">
+                    <TextBox
+                      style={{
+                        ...baseStyle,
+                        margin: "0px",
+                        "height": "50%",
+                        "marginTop": "4%",
+                        "width": "83%"
+                      }}
+                      background="none"
+                      placeholder="Buscar"
+                      leftNode={<Icon style={{ margin: "0 8px" }}>Search</Icon>}
+                    />
+                  </div>
+                </div>
               </div>
-
-              <div className="bottomNavContainer"></div>
-
-
+              {/* <div className="bottomNavContainer"></div> */}
             </div>
 
+            <div style={{
+              "height": "90%",
+              "width": "100%"
+            }}>
 
+              <div class="wrapper">
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
+              
+              </div>
+            </div>
 
           </NavigationView>
 
@@ -353,9 +388,9 @@ class App extends Component {
           desktopBackgroundImage: 'https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg'
         })}
       >
-
+        <LoginEmailComponent/>
         {/* <IdleViewComponent/> */}
-        <ProjectsView />
+        {/* <ProjectsView /> */}
 
       </UWPThemeProvider>
     );

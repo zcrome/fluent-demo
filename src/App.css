@@ -39,7 +39,7 @@
 }
 
 .topNavContainer{
-  height: 160px;
+  height: 100px;
   vertical-align: top;
 }
 
@@ -52,9 +52,128 @@
   width: 50%;
 }
 
+.divisions-parent-left{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 30%;
+}
+
+.divisions-parent-right{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 70%;
+}
+
+.divisions-left-cont{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 40%;
+}
+
+.divisions-right-cont{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 60%;
+}
+
 .topNavTitle{
-  font-size: 4em;
+  font-size: 2.8em;
     height: 100%;
     width: 100%;
     text-align: left;
+    margin-top: 4%;
+}
+
+.topSortButton{
+    width: 40%;
+    height: 60%;
+    margin-bottom: 19%;
+}
+.topSortMargin{
+  width: 5%;
+height: 100%;
+display: inline-block;
+}
+
+
+.navigation-view-pageTitle-1124336502{
+  font-size: 2em;
+    text-align: left;
+    display: block;
+    position: relative;
+    margin-left: 5px;
+}
+
+
+.leftMenuItemsTitles{
+  font-size: 1.5em;
+}
+
+.navigation-view-paneTopIcons-1330591933{
+  margin-top: 25%;
+}
+
+
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 430px 430px 430px;
+  grid-gap: 1%;
+  width: 100%;
+  height: 100%;
+  margin-left: 10%;
+}
+
+.box {
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.box-project{
+  width: 100%;
+  height: 100%;
+}
+
+.box-project-image{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 60%;
+}
+.box-project-title{
+  display: block;
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+.box-project-description{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+.box-project-img{
+  width: 100%;
+  height: 100%;
+}
+
+.box-project-title-text{
+  font-size: 3em;
+}
+
+.box-project-description-text{
+  font-size: 2em;
 }
