@@ -46,12 +46,12 @@ class LoginEmailComponent extends Component {
       fontSize: 14,
       fontWeight: "lighter",
       textAlign: "center",
-      width: "40%",
-      height: "40%",
+      width: "800px",
+      height: "500px",
       margin: 10,
       outline: "none",
       border: `1px solid ${theme.listAccentLow}`,
-      overflow: "auto",
+      overflow: "hidden",
       position: "absolute",
       left: 0,
       right: 0,
@@ -78,11 +78,12 @@ class LoginEmailComponent extends Component {
             style={theme.prefixStyle({
               "display": "block",
               "position": "relative",
-              "fontSize": "6em",
-              "top": "25%",
-              "left": "11%",
+              "fontSize": "2rem",
+              "fontWeight": "600",
+              "top": "32%",
+              "left": "10%",
               "width": "100%",
-              "margin": "0",
+              "margin": "0px",
               "textAlign": "left"
             })}>Log In</p>
 
@@ -95,7 +96,7 @@ class LoginEmailComponent extends Component {
               "top": "35%",
               "left": "10%",
               "width": "80%",
-              "height": "120px"
+              "height": "50px"
             })}
             placeholder="Ingrese email"
           />
@@ -105,14 +106,13 @@ class LoginEmailComponent extends Component {
             {
               fontSize: 32,
               ...defaultBtnStyle,
-              "marginTop": "26%",
-              "left": "67%",
+              "marginTop": "37%",
+              "left": "64%",
               "display": "block",
               "position": "relative",
-              "width": "28%",
-              "marginTop": "32%",
-              "height": "100px",
-              "fontSize": "4em"
+              "width": "200px",
+              "height": "60px",
+              "fontSize": "30px"
             }}>
             Siguiente
         </Button>
@@ -285,8 +285,8 @@ class ProjectsView extends Component {
           ...itemStyle,
           background: theme.acrylicTexture40.background,
           "marginBottom": "0px",
-          "width": "1920px",
-          "height": "1080px",
+          "width": "800px",
+          "height": "800px",
         }}>
 
 
@@ -296,8 +296,8 @@ class ProjectsView extends Component {
               ...baseStyle,
               margin: "0px"
             }}
-            topIcon={<Icon style={{ fontSize: "4em" }}>ToggleThumb</Icon>}
-            pageTitle="Jose Sanchez"
+            topIcon={<Icon style={{ fontSize: "0" }}>ToggleThumb</Icon>}
+            pageTitle={<p style={{ fontSize: "0" }}>NOMBRE</p>}
             displayMode="compact"
             autoResize={false}
             defaultExpanded
@@ -341,29 +341,40 @@ class ProjectsView extends Component {
                   </div>
                 </div>
               </div>
-              {/* <div className="bottomNavContainer"></div> */}
             </div>
 
-            <div style={{
-              "height": "90%",
-              "width": "100%"
-            }}>
+            <div style={theme.prefixStyle({
+            "overflowY": "scroll",
+            "overflowX": "hidden",
+            "height": "100%"
+            })}>
 
-              <div class="wrapper">
+            
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
-              
-              </div>
+            
+
             </div>
+
+
+
 
           </NavigationView>
-
-
-
+          
+          <div className="user-info-container">
+            <div className="user-info-sub-container">
+              <div className="user-profile-icon">
+                {<Icon style={{ fontSize: "11em",  "marginTop": "14%" }}>ToggleThumb</Icon>}
+              </div>
+              <div className="user-profile-name">
+                <p>NOMBRE</p>
+              </div>
+            </div>
+          </div>
 
         </span>
       </div>
@@ -372,6 +383,110 @@ class ProjectsView extends Component {
 }
 
 
+
+
+
+
+
+class ProjectOpened extends Component {
+
+  static contextTypes = { theme: PropTypes.object };
+
+  handleClick() {
+    console.log("HALO!");
+  }
+
+
+  render() {
+
+    const navigationTopNodes = [
+      <SplitViewCommand className="leftMenuItemsTitles" label="Recursos" icon={"\uE773"} />,
+      <SplitViewCommand className="leftMenuItemsTitles" label="Open" icon={"\uED43"} />,
+      <SplitViewCommand className="leftMenuItemsTitles" label="Color de Fondo" icon={"\uED67"} />
+    ];
+
+    const navigationBottomNode = [
+      <SplitViewCommand label="Cerrar Sesión" icon={"\uE7E8"} />
+    ];
+
+
+    const baseStyle: React.CSSProperties = {
+      margin: 10
+    };
+
+    const defaultBtnStyle: React.CSSProperties = {
+      margin: 4
+    };
+
+    const { theme } = this.context;
+    const itemStyle = theme.prefixStyle({
+      color: theme.baseHigh,
+      fontSize: 14,
+      fontWeight: "lighter",
+      textAlign: "center",
+      width: "40%",
+      height: "40%",
+      margin: 10,
+      outline: "none",
+
+      overflow: "auto",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      margin: "auto"
+    });
+    return (
+      <div
+        style={theme.prefixStyle({
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          width: "100%",
+          padding: "160px 0",
+          background: theme.desktopBackground
+        })}
+      >
+        <span style={{
+          ...itemStyle,
+          background: theme.acrylicTexture40.background,
+          "marginBottom": "0px",
+          "width": "800px",
+          "height": "800px",
+        }}>
+
+
+        <NavigationView
+          style={{
+            ...baseStyle,
+            "height": "800px",
+            "margin": "0px",
+            "overflow": "hidden"
+          }}
+          className="open-p-nav-view"
+          pageTitle="José Sanchez"
+          displayMode="overlay"
+          autoResize={false}
+          background={theme.listLow}
+          initWidth={48}
+          navigationTopNodes={navigationTopNodes}
+          navigationBottomNodes={navigationBottomNode}
+          focusNavigationNodeIndex={3}
+        >
+
+        <div className="open-p-nav-view-content"></div>
+          
+        </NavigationView>
+
+
+        </span>
+      </div>
+    );
+  }
+}
 
 
 
@@ -388,10 +503,10 @@ class App extends Component {
           desktopBackgroundImage: 'https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg'
         })}
       >
-        <LoginEmailComponent/>
+        {/* <LoginEmailComponent/> */}
         {/* <IdleViewComponent/> */}
         {/* <ProjectsView /> */}
-
+        <ProjectOpened/>
       </UWPThemeProvider>
     );
   }

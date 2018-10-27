@@ -75,8 +75,9 @@
   vertical-align: top;
   margin: 0px;
   padding: 0px;
-  height: 100%;
-  width: 40%;
+  height: 70%;
+  width: 35%;
+  margin-top: 3%;
 }
 
 .divisions-right-cont{
@@ -89,17 +90,17 @@
 }
 
 .topNavTitle{
-  font-size: 2.8em;
+  font-size: 1.5em;
     height: 100%;
     width: 100%;
     text-align: left;
-    margin-top: 4%;
+    margin-top: 14%;
 }
 
 .topSortButton{
     width: 40%;
     height: 60%;
-    margin-bottom: 19%;
+    margin-bottom: 70%;
 }
 .topSortMargin{
   width: 5%;
@@ -177,3 +178,80 @@ display: inline-block;
 .box-project-description-text{
   font-size: 2em;
 }
+
+
+.navigation-view-paneTopIcons-1330591933{
+  margin-top: 295px;
+}
+
+.user-info-container{
+  display: block;
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  bottom: 63%;
+}
+
+.user-info-sub-container{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.user-profile-icon{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+
+
+.user-profile-name{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 30%;
+  font-size: 1.5em;
+}
+
+/*---------------------------------*/
+
+.open-p-nav-view{
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  margin: 0px;
+}
+
+.open-p-nav-view-content{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  padding-left: 50px;
+}
+
+
+.navigation-view-paneTop-563544914 .navigation-view-paneTopIcons-1330591933{
+  margin-top: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
