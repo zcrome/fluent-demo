@@ -400,14 +400,6 @@ class ProjectsView extends Component {
 
 
 
-// export interface ProjectOpened {
-//   showHeaderIcon?: boolean;
-//   showItemIcon?: boolean;
-//   iconDirection?: "left" | "right";
-//   itemHeight?: number;
-// }
-
-
 class ProjectOpened extends Component {
 
   static contextTypes = { theme: PropTypes.object };
@@ -543,8 +535,114 @@ class ProjectOpened extends Component {
 
 
 
+        </span>
+      </div>
+    );
+  }
+}
 
 
+
+
+
+
+
+
+class LoginPasswordComponent extends Component {
+
+  static contextTypes = { theme: PropTypes.object };
+
+  handleClick() {
+    console.log("HALO!");
+  }
+
+
+  render() {
+
+    const baseStyle: React.CSSProperties = {
+      margin: 10
+    };
+
+    const defaultBtnStyle: React.CSSProperties = {
+      margin: 4
+    };
+
+    const { theme } = this.context;
+    const itemStyle = theme.prefixStyle({
+      color: theme.baseHigh,
+      fontSize: 14,
+      fontWeight: "lighter",
+      textAlign: "center",
+      width: "800px",
+      height: "500px",
+      margin: 10,
+      outline: "none",
+      border: `1px solid ${theme.listAccentLow}`,
+      overflow: "hidden",
+      position: "absolute",
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      margin: "auto"
+    });
+    return (
+      <div
+        style={theme.prefixStyle({
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          width: "100%",
+          padding: "160px 0",
+          background: theme.desktopBackground
+        })}
+      >
+        <span style={{ ...itemStyle, background: theme.acrylicTexture40.background }}>
+
+          <p
+            style={theme.prefixStyle({
+              "display": "block",
+              "position": "relative",
+              "fontSize": "2rem",
+              "fontWeight": "600",
+              "top": "32%",
+              "left": "10%",
+              "width": "100%",
+              "margin": "0px",
+              "textAlign": "left"
+            })}>Contraseña</p>
+
+
+
+          <TextBox
+            style={theme.prefixStyle({
+              "display": "block",
+              "position": "relative",
+              "top": "35%",
+              "left": "10%",
+              "width": "80%",
+              "height": "50px"
+            })}
+            placeholder="Ingrese contraseña"
+          />
+
+
+          <Button onClick={this.handleClick} style={
+            {
+              fontSize: 32,
+              ...defaultBtnStyle,
+              "marginTop": "37%",
+              "left": "64%",
+              "display": "block",
+              "position": "relative",
+              "width": "200px",
+              "height": "60px",
+              "fontSize": "30px"
+            }}>
+            Ingresar
+        </Button>
 
         </span>
       </div>
@@ -568,9 +666,11 @@ class App extends Component {
         })}
       >
         {/* <LoginEmailComponent/> */}
+        <LoginPasswordComponent/>
         {/* <IdleViewComponent/> */}
         {/* <ProjectsView /> */}
-        <ProjectOpened />
+        {/* <ProjectOpened /> */}
+
       </UWPThemeProvider>
     );
   }
