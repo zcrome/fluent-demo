@@ -10,6 +10,20 @@ import AutoSuggestBox from "react-uwp/AutoSuggestBox";
 import NavigationView from "react-uwp/NavigationView";
 import SplitViewCommand from "react-uwp/SplitViewCommand";
 import Icon from "react-uwp/Icon";
+
+
+import TreeView, { TreeItem } from "react-uwp/TreeView";
+
+import CheckBox from "react-uwp/CheckBox";
+import Toggle from "react-uwp/Toggle";
+import Slider from "react-uwp/Slider";
+import DropDownMenu from "react-uwp/DropDownMenu";
+
+
+
+
+
+
 // import Content from "./components/Content";
 
 import { FadeInOut, SlideInOut, ScaleInOut, CustomAnimate } from "react-uwp/Animate";
@@ -344,19 +358,19 @@ class ProjectsView extends Component {
             </div>
 
             <div style={theme.prefixStyle({
-            "overflowY": "scroll",
-            "overflowX": "hidden",
-            "height": "100%"
+              "overflowY": "scroll",
+              "overflowX": "hidden",
+              "height": "100%"
             })}>
 
-            
+
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
               <div class="box"><Button className="box-project"><div className="box-project-image"><img className="box-project-img" src='https://www.react-uwp.com/HEAD/static/images/jennifer-bailey-10753.1DE91.jpg' alt="Smiley face" height="42" width="42"></img></div><div className="box-project-title"><p className="box-project-title-text">Name</p></div><div className="box-project-description"><p className="box-project-description-text">Lorem ipsum dolor sit amet consectetur adipiscing elit senectus, nullam neque justo facilisi eget hac fermentum.</p></div></Button></div>
-            
+
 
             </div>
 
@@ -364,11 +378,11 @@ class ProjectsView extends Component {
 
 
           </NavigationView>
-          
+
           <div className="user-info-container">
             <div className="user-info-sub-container">
               <div className="user-profile-icon">
-                {<Icon style={{ fontSize: "11em",  "marginTop": "14%" }}>ToggleThumb</Icon>}
+                {<Icon style={{ fontSize: "11em", "marginTop": "14%" }}>ToggleThumb</Icon>}
               </div>
               <div className="user-profile-name">
                 <p>NOMBRE</p>
@@ -386,6 +400,12 @@ class ProjectsView extends Component {
 
 
 
+// export interface ProjectOpened {
+//   showHeaderIcon?: boolean;
+//   showItemIcon?: boolean;
+//   iconDirection?: "left" | "right";
+//   itemHeight?: number;
+// }
 
 
 class ProjectOpened extends Component {
@@ -396,13 +416,48 @@ class ProjectOpened extends Component {
     console.log("HALO!");
   }
 
+  static contextTypes = { theme: PropTypes.object };
+  context: { theme: ReactUWP.ThemeType };
+  state: ProjectOpened = {
+    showHeaderIcon: false,
+    showItemIcon: false,
+    iconDirection: "left",
+    itemHeight: 32
+  };
 
   render() {
 
+    const {
+      showHeaderIcon,
+      showItemIcon,
+      iconDirection,
+      itemHeight
+    } = this.state;
+
+
     const navigationTopNodes = [
-      <SplitViewCommand className="leftMenuItemsTitles" label="Recursos" icon={"\uE773"} />,
-      <SplitViewCommand className="leftMenuItemsTitles" label="Open" icon={"\uED43"} />,
-      <SplitViewCommand className="leftMenuItemsTitles" label="Color de Fondo" icon={"\uED67"} />
+
+      <TreeView
+        style={{ height: 640 }}
+        iconDirection={iconDirection}
+        itemHeight={itemHeight}
+        headerIcon={showHeaderIcon && <Icon style={{ fontSize: itemHeight / 3 }}>FolderLegacy</Icon>}
+        itemIcon={showItemIcon && <Icon style={{ fontSize: itemHeight / 3 }}>OpenFileLegacy</Icon>}
+        listSource={[{
+          title: "Buscar",
+          children: [{
+            title: "Imagenes",
+          }]
+        },{
+          title: "Mis Materiales",
+          children: []
+        },{
+          title: "Color Fondo",
+          children: []
+        }]}
+        showFocus
+      />
+
     ];
 
     const navigationBottomNode = [
@@ -454,32 +509,41 @@ class ProjectOpened extends Component {
           ...itemStyle,
           background: theme.acrylicTexture40.background,
           "marginBottom": "0px",
-          "width": "800px",
-          "height": "800px",
+          "width": "854px",
+          "height": "480px",
         }}>
 
 
-        <NavigationView
-          style={{
-            ...baseStyle,
-            "height": "800px",
-            "margin": "0px",
-            "overflow": "hidden"
-          }}
-          className="open-p-nav-view"
-          pageTitle="José Sanchez"
-          displayMode="overlay"
-          autoResize={false}
-          background={theme.listLow}
-          initWidth={48}
-          navigationTopNodes={navigationTopNodes}
-          navigationBottomNodes={navigationBottomNode}
-          focusNavigationNodeIndex={3}
-        >
+          <NavigationView
+            style={{
+              ...baseStyle,
+              "height": "480px",
+              "margin": "0px",
+              "overflow": "hidden"
+            }}
+            className="open-p-nav-view"
+            pageTitle={<p style={{ fontSize: "16px" }}>José Sanchez</p>}
+            displayMode="compact"
+            autoResize={false}
+            defaultExpanded
+            background={theme.listLow}
+            initWidth={48}
+            navigationTopNodes={navigationTopNodes}
+            navigationBottomNodes={navigationBottomNode}
+            focusNavigationNodeIndex={3}
+            isControlled
+          >
+            <div className="open-p-nav-view-content">
+            
+            </div>
 
-        <div className="open-p-nav-view-content"></div>
-          
-        </NavigationView>
+
+          </NavigationView>
+
+
+
+
+
 
 
         </span>
@@ -506,7 +570,7 @@ class App extends Component {
         {/* <LoginEmailComponent/> */}
         {/* <IdleViewComponent/> */}
         {/* <ProjectsView /> */}
-        <ProjectOpened/>
+        <ProjectOpened />
       </UWPThemeProvider>
     );
   }
